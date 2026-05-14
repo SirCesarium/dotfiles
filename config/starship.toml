@@ -1,0 +1,75 @@
+format = """\
+$fill\
+$time\
+$line_break\
+[](fg:#cc4a3a)\
+$directory\
+$git_branch\
+$git_status\
+\
+$line_break\
+$character"""
+
+right_format = ""
+
+[character]
+success_symbol = "[◆](bold #cc4a3a)"
+error_symbol = "[◆](bold #e06c75)"
+vicmd_symbol = "[◆](bold #61afef)"
+
+[directory]
+style = "bold #e5c07b"
+truncation_length = 3
+truncate_to_repo = false
+home_symbol = "~"
+
+[git_branch]
+format = " on [$symbol$branch]($style) "
+style = "#98c379"
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+style = "#61afef"
+conflicted = "✖"
+up_to_date = ""
+untracked = "?"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+staged = "●"
+modified = "!"
+stashed = "⚑"
+deleted = "✖"
+renamed = "»"
+
+[nodejs]
+format = "via [$symbol($version )]($style)"
+style = "#56b6c2"
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[python]
+format = "via [$symbol($version )]($style)"
+style = "#c678dd"
+detect_files = ["requirements.txt", ".python-version", "Pipfile", "pyproject.toml"]
+
+[rust]
+format = "via [$symbol($version )]($style)"
+style = "#e06c75"
+detect_files = ["Cargo.toml"]
+
+[java]
+format = "via [$symbol($version )]($style)"
+style = "#d19a66"
+
+[time]
+format = '[$time]($style)'
+time_format = "%H:%M"
+style = "#5c6370"
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+format = "took [$duration]($style)"
+style = "#5c6370"
+min_time = 3000
